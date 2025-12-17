@@ -1,0 +1,59 @@
+.historyList {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.historyList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.historyList::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+.historyList::-webkit-scrollbar-thumb {
+  background: #4CAF50;
+  border-radius: 2px;
+}
+
+.txRow {
+  transition: all 0.2s ease;
+  border-left: 4px solid transparent;
+}
+
+.txRow:hover {
+  transform: translateX(4px);
+  border-left-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.05);
+}
+
+.loadingSpinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(76, 175, 80, 0.3);
+  border-radius: 50%;
+  border-top-color: #4CAF50;
+  animation: spin 1s ease-in-out infinite;
+}
+
+.emptyState {
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounceIn {
+  0% { opacity: 0; transform: scale(0.3); }
+  50% { opacity: 1; transform: scale(1.05); }
+  70% { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@media (min-width: 768px) {
+  .historyList { max-height: none; }
+}

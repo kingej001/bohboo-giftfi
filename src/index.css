@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles for Bohboo theme */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #E0F7E0 0%, #F0F8FF 100%);
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.5) 1px, transparent 0);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app-container {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.frosted-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+/* Custom Bohboo enchanted style for wallet connect button */
+.wallet-adapter-button {
+  background-color: #facc15 !important; /* yellow-400 */
+  color: #1f2937 !important; /* gray-800 */
+  border-radius: 0.75rem !important; /* rounded-xl */
+  padding: 1rem 1.5rem !important; /* py-4 px-6 */
+  font-weight: 600 !important; /* font-semibold */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.2s ease-in-out !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important; /* space-x-2 */
+  width: 100% !important;
+}
+
+.wallet-adapter-button:hover {
+  background-color: #fb923c !important; /* orange-400 */
+  transform: scale(1.05) !important;
+}
+
+.wallet-adapter-button:active {
+  transform: scale(0.95) !important;
+}
+
+.wallet-adapter-button:disabled {
+  background-color: #fde047 !important; /* yellow-300 */
+  cursor: not-allowed !important;
+}
+
+/* If you have a "Select Wallet" button in the header (WalletMultiButton) */
+.wallet-adapter-button-trigger {
+  background-color: #a78bfa !important; /* or your preferred header color */
+  color: white !important;
+}
